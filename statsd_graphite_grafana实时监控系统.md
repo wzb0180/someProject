@@ -47,3 +47,4 @@ docker-compose.yml
           - /var/lib/grafana:/var/lib/grafana
         environment:
           - GF_AUTH_ANONYMOUS_ENABLED=true
+statsd使用https://github.com/etsy/statsd/blob/master/docs/metric_types.md
