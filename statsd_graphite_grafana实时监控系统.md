@@ -3,6 +3,7 @@ input -> statsd -> graphite -> grafana(show)
 by docker-compose
 
 config.js
+
         {
             {
             "graphiteHost":"127.0.0.1",
@@ -20,6 +21,7 @@ config.js
                 }
             }
 DockerFile
+
         FROM hopsoft/graphite-statsd
         MAINTAINER wen zhanbo "wzb"
         ENV REFRESHED_AT 2016
@@ -27,6 +29,7 @@ DockerFile
         EXPOSE 80 2023 8125/udp
 
 docker-compose.yml
+
         version: '2'
         services:
           graphite:
@@ -47,4 +50,5 @@ docker-compose.yml
               - /var/lib/grafana:/var/lib/grafana
             environment:
               - GF_AUTH_ANONYMOUS_ENABLED=true
+              
 statsd使用https://github.com/etsy/statsd/blob/master/docs/metric_types.md
